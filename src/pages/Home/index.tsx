@@ -13,25 +13,25 @@ interface PageProps {
 }
 
 export function ListItemsPage({ category }: PageProps) {
-    const { drinks, restaurants, snacks } = useSelector((state: iReducerStore) => state.products)
+    const { tradicional, gourmet, sopas } = useSelector((state: iReducerStore) => state.products)
     const [data, setData] = useState<iProducts[]>([])
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        if (!drinks || !snacks || !restaurants) return
+        if (!tradicional || !sopas || !gourmet) return
 
         setIsLoading(true)
 
         let categoryProducts: iProducts[]
 
         switch (category) {
-            case 'drinks':
-                categoryProducts = drinks
+            case 'tradicional':
+                categoryProducts = tradicional
                 break;
-            case 'restaurants':
-                categoryProducts = restaurants
+            case 'gourmet':
+                categoryProducts = gourmet
                 break;
-            default: categoryProducts = snacks
+            default: categoryProducts = sopas
                 break;
         }
 
@@ -40,7 +40,7 @@ export function ListItemsPage({ category }: PageProps) {
             setData(categoryProducts)
             setIsLoading(false)
         }, 500)
-    }, [category, drinks, restaurants, snacks])
+    }, [category, tradicional, gourmet, sopas])
 
     return (
         <Grid container justifyContent="center">

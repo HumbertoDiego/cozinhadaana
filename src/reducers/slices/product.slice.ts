@@ -1,15 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { iProducts, DrinksCollection, RestaurantsCollection, SnacksCollection } from '../../db';
+import { iProducts, TradicionalsCollection, GourmetsCollection, SopasCollection } from '../../db';
 export interface iProductsInitialState {
-  drinks: iProducts[];
-  restaurants: iProducts[];
-  snacks: iProducts[];
+  tradicional: iProducts[];
+  gourmet: iProducts[];
+  sopas: iProducts[];
 }
 
 const initialState = {
-  drinks: DrinksCollection,
-  restaurants: RestaurantsCollection,
-  snacks: SnacksCollection,
+  tradicional: TradicionalsCollection,
+  gourmet: GourmetsCollection,
+  sopas: SopasCollection,
 };
 
 export const productSlice = createSlice({
@@ -21,23 +21,23 @@ export const productSlice = createSlice({
 
       // pegar o index do item com id correspondente ao passado pelo parametro
       if (category === 'Drink') {
-        const index = state.drinks.findIndex((item) => item.id === id);
-        state.drinks[index] = payload;
+        const index = state.tradicional.findIndex((item) => item.id === id);
+        state.tradicional[index] = payload;
       } else if (category === 'Restaurant') {
-        const index = state.restaurants.findIndex((item) => item.id === id);
-        state.restaurants[index] = payload;
+        const index = state.gourmet.findIndex((item) => item.id === id);
+        state.gourmet[index] = payload;
       } else {
-        const index = state.snacks.findIndex((item) => item.id === id);
-        state.snacks[index] = payload;
+        const index = state.sopas.findIndex((item) => item.id === id);
+        state.sopas[index] = payload;
       }
     },
     deleteItem(state, { payload }) {
       const { id, category } = payload;
 
-      if (category === 'Drink') state.drinks = state.drinks.filter((drink) => drink.id !== id);
+      if (category === 'Drink') state.tradicional = state.tradicional.filter((drink) => drink.id !== id);
       else if (category === 'Restaurant')
-        state.restaurants = state.restaurants.filter((restaurant) => restaurant.id !== id);
-      else state.snacks = state.snacks.filter((snack) => snack.id !== id);
+        state.gourmet = state.gourmet.filter((restaurant) => restaurant.id !== id);
+      else state.sopas = state.sopas.filter((snack) => snack.id !== id);
     },
   },
 });

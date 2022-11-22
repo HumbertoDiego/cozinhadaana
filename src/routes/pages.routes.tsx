@@ -2,19 +2,19 @@ import { ListItemsPage } from '../pages/Home'
 
 const APP_ROUTES = [
   {
-    label: 'Bebidas',
+    label: 'Tradicional',
     path: '/',
-    component: <ListItemsPage category="drinks" />,
+    component: <ListItemsPage category="tradicional" />,
   },
   {
-    label: 'Lanches',
-    path: 'snacks',
-    component: <ListItemsPage category="snacks" />,
+    label: 'Gourmet',
+    path: 'gourmet',
+    component: <ListItemsPage category="gourmet" />,
   },
   {
-    label: 'Restaurantes',
-    path: 'restaurants',
-    component: <ListItemsPage category="restaurants" />,
+    label: 'Sopas',
+    path: 'sopas',
+    component: <ListItemsPage category="sopas" />,
   },
 ];
 
