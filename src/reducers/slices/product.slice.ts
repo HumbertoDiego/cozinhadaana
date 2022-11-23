@@ -22,21 +22,25 @@ export const productSlice = createSlice({
       // pegar o index do item com id correspondente ao passado pelo parametro
       if (category === 'Tradicional') {
         const index = state.tradicional.findIndex((item) => item.id === id);
+        payload.qt++;
+        state.tradicional[index] = payload
+      } else if (category === 'Gourmet') {
+        const index = state.gourmet.findIndex((item) => item.id === id);
+        payload.qt++;
+        //state.gourmet[index] = payload ; 
+        // mesma coisa que
         return {
           ...state,
+          gourmet: [
+            ...state.gourmet.map(
+              (gourmet,i) => i ===id ?{...gourmet, qt: payload.qt} : gourmet
+            )
+          ]
         }
-      } else if (category === 'Sopas') {
-        const index = state.gourmet.findIndex((item) => item.id === id);
-        state.gourmet[index] = payload
-        console.log(state.gourmet[index])
-        // return {
-        //   ...state,
-        // }
       } else {
         const index = state.sopas.findIndex((item) => item.id === id);
-        return {
-          ...state,
-        }
+        payload.qt++;
+        state.sopas[index] = payload
       }
     },
     deleteItem(state, { payload }) {

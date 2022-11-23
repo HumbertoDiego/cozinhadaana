@@ -1,7 +1,7 @@
 
 <div align="center">
 
-<img src=".github/cozinhadaanav3.svg">
+<img src=".github/cozinhadaanav4.svg">
 
 </div>
 

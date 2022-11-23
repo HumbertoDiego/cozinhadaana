@@ -36,10 +36,12 @@ export function ListItemsPage({ category }: PageProps) {
         }
 
         // timeout to simulate a loading
-        setTimeout(() => {
+        /* setTimeout(() => {
             setData(categoryProducts)
             setIsLoading(false)
-        }, 500)
+        }, 500) */
+        setData(categoryProducts);
+        setIsLoading(false);
     }, [category, tradicional, gourmet, sopas])
 
     return (

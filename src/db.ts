@@ -27,6 +27,10 @@ export interface iProducts {
   qt: number;
 }
 
+export interface iCarts {
+  products: iProducts[]
+}
+
 export const TradicionalsCollection: iProducts[] = [
   {
     id: 0,
@@ -110,12 +114,13 @@ export const TradicionalsCollection: iProducts[] = [
     title: 'Frango desfiado',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 10,
+    qt: 0
   },
 ];
 
 export const GourmetsCollection: iProducts[] = [
   {
-    id: 0,
+    id: 100,
     category: 'Gourmet',
     urlImage:
       'https://taipas.to.gov.br/wp-content/plugins/all-in-one-video-gallery/public/assets/images/placeholder-image.png',
@@ -124,7 +129,7 @@ export const GourmetsCollection: iProducts[] = [
     qt: 1
   },
   {
-    id: 1,
+    id: 101,
     category: 'Gourmet',
     urlImage:
       'https://taipas.to.gov.br/wp-content/plugins/all-in-one-video-gallery/public/assets/images/placeholder-image.png',
@@ -133,7 +138,7 @@ export const GourmetsCollection: iProducts[] = [
     qt: 0
   },
   {
-    id: 2,
+    id: 102,
     category: 'Gourmet',
     urlImage:
       'https://taipas.to.gov.br/wp-content/plugins/all-in-one-video-gallery/public/assets/images/placeholder-image.png',
@@ -142,7 +147,7 @@ export const GourmetsCollection: iProducts[] = [
     qt: 0
   },
   {
-    id: 3,
+    id: 103,
     category: 'Gourmet',
     urlImage:
       'https://taipas.to.gov.br/wp-content/plugins/all-in-one-video-gallery/public/assets/images/placeholder-image.png',
@@ -151,7 +156,7 @@ export const GourmetsCollection: iProducts[] = [
     qt: 0
   },
   {
-    id: 4,
+    id: 104,
     category: 'Gourmet',
     urlImage:
       'https://taipas.to.gov.br/wp-content/plugins/all-in-one-video-gallery/public/assets/images/placeholder-image.png',
@@ -160,7 +165,7 @@ export const GourmetsCollection: iProducts[] = [
     qt: 0
   },
   {
-    id: 5,
+    id: 105,
     category: 'Gourmet',
     urlImage:
       'https://taipas.to.gov.br/wp-content/plugins/all-in-one-video-gallery/public/assets/images/placeholder-image.png',
@@ -169,7 +174,7 @@ export const GourmetsCollection: iProducts[] = [
     qt: 0
   },
   {
-    id: 6,
+    id: 106,
     category: 'Gourmet',
     urlImage:
       'https://thumb-cdn.soluall.net/prod/shp_products/sp1280fw/5eb99042-90e4-41e9-a472-2801ac1e08e8/5eb99042-c024-44c9-8414-2801ac1e08e8.jpg',
@@ -179,7 +184,7 @@ export const GourmetsCollection: iProducts[] = [
     qt: 0
   },
   {
-    id: 7,
+    id: 107,
     category: 'Gourmet',
     urlImage: 'https://paradisepizzaria.com.br/site/img/produtos/281485_1_g.png',
     title: 'Lasanha de berinjela',
@@ -188,7 +193,7 @@ export const GourmetsCollection: iProducts[] = [
     qt: 0
   },
   {
-    id: 8,
+    id: 108,
     category: 'Gourmet',
     urlImage: 'https://paradisepizzaria.com.br/site/img/produtos/281485_1_g.png',
     title: 'Lasanha a bolonhesa',
@@ -197,7 +202,7 @@ export const GourmetsCollection: iProducts[] = [
     qt: 0
   },
   {
-    id: 9,
+    id: 109,
     category: 'Gourmet',
     urlImage: 'https://paradisepizzaria.com.br/site/img/produtos/281485_1_g.png',
     title: 'Yakisoba',
@@ -206,7 +211,7 @@ export const GourmetsCollection: iProducts[] = [
     qt: 0
   },
   {
-    id: 10,
+    id: 110,
     category: 'Gourmet',
     urlImage: 'https://paradisepizzaria.com.br/site/img/produtos/281485_1_g.png',
     title: 'Costela de tambaqui com arroz de tacacá',
@@ -215,7 +220,7 @@ export const GourmetsCollection: iProducts[] = [
     qt: 0
   },
   {
-    id: 11,
+    id: 111,
     category: 'Gourmet',
     urlImage: 'https://noiteemfoco.campinas.br/wp-content/uploads/2020/08/CARD%C3%81PIO-PRATOS-INDIVIDUAL-FIL%C3%89-DE-FRANGO.jpg',
     title: 'Filé de peito de frango com creme de cebola e laranja',
@@ -224,19 +229,20 @@ export const GourmetsCollection: iProducts[] = [
     qt: 0
   },
   {
-    id: 12,
+    id: 112,
     category: 'Gourmet',
     urlImage: 'https://noiteemfoco.campinas.br/wp-content/uploads/2020/08/CARD%C3%81PIO-PRATOS-INDIVIDUAL-FIL%C3%89-DE-FRANGO.jpg',
     title: 'Filé de peito de frango com bacon ao molho barbecue',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 25,
+    qt: 0
   },
   
 ];
 
 export const SopasCollection: iProducts[] = [
   {
-    id: 0,
+    id: 200,
     category: 'Sopas',
     urlImage:
       'https://thumb-cdn.soluall.net/prod/shp_products/sp1280fw/5eb99042-90e4-41e9-a472-2801ac1e08e8/5eb99042-c024-44c9-8414-2801ac1e08e8.jpg',
@@ -246,7 +252,7 @@ export const SopasCollection: iProducts[] = [
     qt: 0
   },
   {
-    id: 1,
+    id: 201,
     category: 'Sopas',
     urlImage: 'https://paradisepizzaria.com.br/site/img/produtos/281485_1_g.png',
     title: 'Sopa de abóbora',
@@ -255,7 +261,7 @@ export const SopasCollection: iProducts[] = [
     qt: 0
   },
   {
-    id: 2,
+    id: 202,
     category: 'Sopas',
     urlImage: 'https://nutrimassasesalgados.com/wp-content/uploads/2020/05/MG_6884-copiar.jpg',
     title: 'Sopa de lentilha',
@@ -264,7 +270,7 @@ export const SopasCollection: iProducts[] = [
     qt: 0
   },
   {
-    id: 3,
+    id: 203,
     category: 'Sopas',
     urlImage:
       'https://imagensemoldes.com.br/wp-content/uploads/2020/05/Salgado-Coxinha-PNG-1280x720.png',
@@ -274,11 +280,12 @@ export const SopasCollection: iProducts[] = [
     qt: 0
   },
   {
-    id: 4,
+    id: 204,
     category: 'Sopas',
     urlImage: 'https://img.estadao.com.br/resources/jpg/2/1/1487193579312.jpg',
     title: 'Sopa de abóbora com camarão',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 10,
+    qt: 0
   },
 ];
