@@ -2,74 +2,73 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
+import { CardActionArea } from '@mui/material';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
+import Badge from '@mui/material/Badge';
 
 import { iProducts } from '../../db';
 import { useDispatch, useSelector } from 'react-redux';
 import { memo, useState } from 'react';
-import UpdateProductModal from '../Modals/updateProduct.modal';
-import { deleteItem } from '../../reducers/slices/product.slice';
+import { addItem, deleteItem } from '../../reducers/slices/product.slice';
 
-function ProductCard({ id, title, description, urlImage, category }: iProducts) {
+function ProductCard({ id, title, description, urlImage, category, qt }: iProducts) {
     const { isLogged } = useSelector((state: any) => state.user)
     const dispatch = useDispatch()
 
     const [openUpdateModal, setUpdateModal] = useState(false)
 
-    const toggleUpdateModal = () => setUpdateModal(!openUpdateModal)
+    const [count, setCount] = useState(qt);
+    const putIntoCart = () => setUpdateModal(!openUpdateModal)
 
     const handleDeleteItem = () => {
-        dispatch(deleteItem({ id, title, description, urlImage, category }))
+        if (count>0){
+            setCount(count-1);
+        }
+        //dispatch(deleteItem({ id, title, description, urlImage, category }))
+    }
+
+    const handleAddItem = () =>{
+        setCount(count+1);
+        qt = count;
+        dispatch(addItem({ id, title, description, urlImage, category, qt }));
     }
 
     return (
         <>
-            <UpdateProductModal
-                open={openUpdateModal}
-                toggle={toggleUpdateModal}
-                productData={{ id, title, description, urlImage, category }}
-            />
-            <Card sx={{ maxWidth: 325, marginTop: 4 }}>
-                <CardMedia
-                    component="img"
-                    image={urlImage}
-                    alt={title}
-                    height="140"
-                    sx={{ objectFit: 'contain', paddingTop: 1 }}
-                />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                        {title}
-                    </Typography>
-                    <Typography variant="body2" color="text">
-                        {description}
-                    </Typography>
-                </CardContent>
-                {
-                    isLogged && (
-                        <CardActions>
-                            <Button
-                                size="small"
-                                onClick={handleDeleteItem}
-                                endIcon={<DeleteIcon />}
-                            >
-                                Deletar
-                            </Button>
-                            <Button
-                                size="small"
-                                onClick={toggleUpdateModal}
-                                endIcon={<EditIcon />}
-                            >
-                                Editar
-                            </Button>
-                        </CardActions>
-                    )
-                }
-            </Card>
-
+            <Badge color="success" badgeContent={count}>
+                <Card sx={{ maxWidth: 325, }}>
+                    <CardActionArea
+                        onClick={handleAddItem}
+                    >
+                        <CardMedia
+                            component="img"
+                            image={urlImage}
+                            alt={title}
+                            height="140"
+                            sx={{ objectFit: 'contain', paddingTop: 1 }}
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                                {title}
+                            </Typography>
+                            <Typography variant="body2" color="text">
+                                {description}
+                            </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                        <Button
+                            size="small"
+                            onClick={handleDeleteItem}
+                            endIcon={<DeleteIcon />}
+                        >
+                            Deletar
+                        </Button>
+                    </CardActions>
+                </Card>
+            </Badge>
         </>
     );
 }

@@ -12,7 +12,7 @@ import { EDIT_PRODUCT_MODAL_TITLE, SUCESS_UPDATE_PRODUCT_MESSAGE } from '../../c
 import Toast, { ToastInitialState } from '../Toast'
 
 import { useDispatch } from 'react-redux';
-import { updateProduct } from '../../reducers/slices/product.slice';
+import { addItem } from '../../reducers/slices/product.slice';
 import { iProducts } from '../../db'
 
 interface ModalProps {
@@ -33,7 +33,7 @@ export default function ({ open, toggle, productData }: ModalProps) {
     const [product, setProduct] = useState(productData)
 
     const handleUpdateProduct = () => {
-        dispatch(updateProduct(product))
+        dispatch(addItem(product))
         toggle()
         setToastConfig((prev) => ({ ...prev, message: SUCESS_UPDATE_PRODUCT_MESSAGE, type: 'success' }))
         return handleOpenToast()
@@ -64,30 +64,9 @@ export default function ({ open, toggle, productData }: ModalProps) {
                     sx={{ '& > :not(style)': { my: 1 }, width: '90%', margin: '0 auto' }}
                 >
                     <TextField
-                        name="urlImage"
-                        label="URL da imagem do produto (opcional)"
+                        name="obs"
+                        label="Obsevações"
                         variant="filled"
-                        type="url"
-                        value={product.urlImage}
-                        onChange={handleProductData}
-                        fullWidth
-                    />
-                    <TextField
-                        name="title"
-                        label="Título do produto"
-                        variant="filled"
-                        required
-                        fullWidth
-                        value={product.title}
-                        onChange={handleProductData}
-                    />
-                    <TextField
-                        name="description"
-                        label="Descrição do produto"
-                        variant="filled"
-                        required
-                        fullWidth
-                        value={product.description}
                         onChange={handleProductData}
                     />
                 </Box>

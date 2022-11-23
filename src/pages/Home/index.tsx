@@ -61,6 +61,7 @@ export function ListItemsPage({ category }: PageProps) {
                                     urlImage={item.urlImage}
                                     category={item.category}
                                     description={item.description}
+                                    qt={item.qt}
                                 />
                             </Grid>
                         ))

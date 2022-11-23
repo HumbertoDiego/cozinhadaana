@@ -1,4 +1,4 @@
-export const SIGNUP_MODAL_TITLE = 'Olá, faça seu cadastro aqui ;)';
+export const CART_MODAL_TITLE = 'Olá, envie seu pedido aqui ;)';
 export const LOGIN_MODAL_TITLE = 'Faça seu login por aqui :)';
 export const EDIT_PRODUCT_MODAL_TITLE = 'Editar produto';
 export const ERROR_SIGNUP_MESSAGE = 'Todos os campos são obrigatórios.';

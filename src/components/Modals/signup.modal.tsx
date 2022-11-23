@@ -8,7 +8,7 @@ import DialogActions from '@mui/material/DialogActions';
 
 import GradientButton from '../GradientButton';
 
-import { SIGNUP_MODAL_TITLE, SUCESS_SIGNUP_MESSAGE, ERROR_SIGNUP_MESSAGE } from '../../constants/strings.constants'
+import { CART_MODAL_TITLE, SUCESS_SIGNUP_MESSAGE, ERROR_SIGNUP_MESSAGE } from '../../constants/strings.constants'
 import Toast, { ToastInitialState } from '../Toast'
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -71,7 +71,7 @@ export default function ({ open, toggle }: ModalProps) {
                 aria-describedby="alert-dialog-description"
             >
                 <DialogTitle id="alert-dialog-title" sx={{ mx: 1 }}>
-                    {SIGNUP_MODAL_TITLE}
+                    {CART_MODAL_TITLE}
                 </DialogTitle>
                 <Box
                     noValidate
@@ -85,44 +85,21 @@ export default function ({ open, toggle }: ModalProps) {
                         variant="filled"
                         required
                         fullWidth
-                        value={userData.name}
                         onChange={handleUserData}
                     />
                     <TextField
-                        name="email"
-                        label="Seu email"
-                        type="email"
+                        name="telefone"
+                        label="Seu telefone"
                         variant="filled"
                         required
                         fullWidth
-                        value={userData.email}
                         onChange={handleUserData}
                     />
                     <TextField
-                        name="cpf"
-                        label="Seu CPF"
+                        name="endereco"
+                        label="Seu endereço"
                         variant="filled"
                         required
-                        value={userData.cpf}
-                        onChange={handleUserData}
-                        fullWidth
-                    />
-                    <TextField
-                        name="password"
-                        label="Sua senha"
-                        variant="filled"
-                        type="password"
-                        required
-                        value={userData.password}
-                        onChange={handleUserData}
-                        fullWidth
-                    />
-                    <TextField
-                        name="avatar"
-                        label="URL do seu avatar (opcional)"
-                        variant="filled"
-                        type="url"
-                        value={userData.avatar}
                         onChange={handleUserData}
                         fullWidth
                     />
@@ -130,7 +107,7 @@ export default function ({ open, toggle }: ModalProps) {
                 <DialogActions sx={{ mx: 2.5 }}>
                     <Button color="secondary" onClick={toggle}>Cancelar</Button>
                     <GradientButton onClick={handleSignUp} autoFocus>
-                        Cadastrar
+                        Enviar
                     </GradientButton>
                 </DialogActions>
             </Dialog>

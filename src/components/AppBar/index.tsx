@@ -6,6 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -19,7 +20,7 @@ import theme from '../../styles/theme';
 
 import APP_PAGES from '../../routes/pages.routes'
 import GradientButton from '../GradientButton';
-import { SignUpModal, LoginModal } from '../../components/Modals'
+import { CartModal, LoginModal } from '../../components/Modals'
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../../reducers/slices/user.slice';
 import { Offset } from './styles';
@@ -37,10 +38,10 @@ export default function ({ children }: Props) {
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
     const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 
-    const [openSignUpModal, setOpenSignUpModal] = useState(false)
+    const [openCartModal, setOpenCartModal] = useState(false)
     const [openLoginModal, setOpenLoginModal] = useState(false)
 
-    const toggleSignUpModal = () => setOpenSignUpModal(!openSignUpModal)
+    const toggleCartModal = () => setOpenCartModal(!openCartModal)
     const toggleLoginModal = () => setOpenLoginModal(!openLoginModal)
 
     const handleLogout = () => dispatch(logoutUser())
@@ -63,7 +64,7 @@ export default function ({ children }: Props) {
 
     return (
         <>
-            <SignUpModal open={openSignUpModal} toggle={toggleSignUpModal} />
+            <CartModal open={openCartModal} toggle={toggleCartModal} />
             <LoginModal open={openLoginModal} toggle={toggleLoginModal} />
 
             <AppBar position="static" sx={{ backgroundColor: 'background.paper' }}>
@@ -122,7 +123,7 @@ export default function ({ children }: Props) {
 
                                 {
                                     !isLogged && (
-                                        <MenuItem onClick={() => {
+                                        <MenuItem sx={{ display: 'none' }} onClick={() => {
                                             handleCloseNavMenu()
                                             toggleLoginModal()
                                         }}>
@@ -169,7 +170,7 @@ export default function ({ children }: Props) {
                                 sx={{
                                     color: 'text.primary',
                                     borderColor: 'primary.800',
-                                    display: { xs: 'none', md: !isLogged ? 'flex' : 'none' },
+                                    display: { xs: 'none', md: 'none' },
                                     my: 2, marginLeft: 1
                                 }}
                             >
@@ -179,10 +180,10 @@ export default function ({ children }: Props) {
 
                         <Box sx={{ flexGrow: 0 }}>
                             <GradientButton
-                                onClick={toggleSignUpModal}
+                                onClick={toggleCartModal}
                                 sx={{ marginRight: 2, display: { xs: !isLogged ? 'flex' : 'none' } }}
                             >
-                                Cadastrar
+                                <AddShoppingCartIcon />
                             </GradientButton>
 
                             {

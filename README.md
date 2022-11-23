@@ -8,7 +8,7 @@
 
 Este projeto é um teste proposto pela [Menew](https://www.menew.com.br/) para a preenchimento da vaga de Desenvolvedor Frontend Júnior.
 
-A idea do **Cardap.io** consiste em uma plataforma (simples) ao qual o usuário possa visualizar os produtos (lanches e bebidas) dos restaurantes cadastrados no sistema. As demais features encontram-se na seção abaixo. O layout elaborado por mim, no Figma, pode ser visualizado clicando [aqui](https://www.figma.com/file/RH6zQXx8SROVVbDb4wYNCP/Menew-Test?node-id=0%3A1).
+A idea do **Cardap.io** consiste em uma plataforma (simples) ao qual o usuário possa visualizar os produtos (lanches e bebidas) dos sopases cadastrados no sistema. As demais features encontram-se na seção abaixo. O layout elaborado por mim, no Figma, pode ser visualizado clicando [aqui](https://www.figma.com/file/RH6zQXx8SROVVbDb4wYNCP/Menew-Test?node-id=0%3A1).
 
 **_Disclaimer_**: Por não ter sido solicitado a implementação de APIs, o CRUD do projeto ocorre no próprio frontend com o tratamento de dados mockados e o gerenciamento dos estados da aplicação ocorre através do [Redux](https://redux.js.org/).
 
@@ -45,7 +45,7 @@ A idea do **Cardap.io** consiste em uma plataforma (simples) ao qual o usuário 
 
 - [ ] Filtrar por preço
 - [ ] Filtrar por nome
-- [ ] Filtrar por restaurante
+- [ ] Filtrar por sopase
 
 ---
 

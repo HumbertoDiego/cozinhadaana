@@ -16,32 +16,40 @@ export const productSlice = createSlice({
   name: 'product',
   initialState,
   reducers: {
-    updateProduct(state, { payload }) {
+    addItem(state, { payload }) {
       const { id, category } = payload;
 
       // pegar o index do item com id correspondente ao passado pelo parametro
-      if (category === 'Drink') {
+      if (category === 'Tradicional') {
         const index = state.tradicional.findIndex((item) => item.id === id);
-        state.tradicional[index] = payload;
-      } else if (category === 'Restaurant') {
+        return {
+          ...state,
+        }
+      } else if (category === 'Sopas') {
         const index = state.gourmet.findIndex((item) => item.id === id);
-        state.gourmet[index] = payload;
+        state.gourmet[index] = payload
+        console.log(state.gourmet[index])
+        // return {
+        //   ...state,
+        // }
       } else {
         const index = state.sopas.findIndex((item) => item.id === id);
-        state.sopas[index] = payload;
+        return {
+          ...state,
+        }
       }
     },
     deleteItem(state, { payload }) {
       const { id, category } = payload;
 
-      if (category === 'Drink') state.tradicional = state.tradicional.filter((drink) => drink.id !== id);
-      else if (category === 'Restaurant')
-        state.gourmet = state.gourmet.filter((restaurant) => restaurant.id !== id);
-      else state.sopas = state.sopas.filter((snack) => snack.id !== id);
+      if (category === 'Tradicional') state.tradicional = state.tradicional.filter((tradicional) => tradicional.id !== id);
+      else if (category === 'Gourmet')
+        state.gourmet = state.gourmet.filter((gourmet) => gourmet.id !== id);
+      else state.sopas = state.sopas.filter((sopas) => sopas.id !== id);
     },
   },
 });
 
-export const { updateProduct, deleteItem } = productSlice.actions;
+export const { addItem, deleteItem } = productSlice.actions;
 
 export default productSlice.reducer;
