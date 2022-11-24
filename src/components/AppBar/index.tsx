@@ -25,6 +25,22 @@ import { CartModal, LoginModal } from '../../components/Modals'
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../../reducers/slices/user.slice';
 import { Offset } from './styles';
+//var axios = require('axios');
+
+
+/* function sendMessage(data) {
+    var config = {
+      method: 'post',
+      url: `https://graph.facebook.com/${process.env.VERSION}/${process.env.PHONE_NUMBER_ID}/messages`,
+      headers: {
+        'Authorization': `Bearer ${process.env.ACCESS_TOKEN}`,
+        'Content-Type': 'application/json'
+      },
+      data: data
+    };
+  
+    return axios(config)
+  } */
 
 interface Props {
     children: ReactElement
@@ -43,7 +59,31 @@ export default function ({ children }: Props) {
     const cartEmpty = !cartProducts.length>0; 
     console.log({cart: cartProducts});
 
+    var waurl = "https://wa.me/5592981000957?text="
 
+    var txttempalte = `Pedido nº 4294
+
+    Modo de entrega: Delivery
+    Endereço: _endereco_de_entrega
+    Preço de entrega: R$ 6,00
+    
+    Itens:
+    
+    ➡ 1x Coca Cola 2l
+    ➡ 1x Pizza Grande (Serve 8 Fatias)
+          Escolha a Quantidade de Sabores
+              1x 2 Sabores
+          2 Sabores -> Sabores
+              1x Calabresa
+              1x Portuguesa
+    
+    OBS: Quero por favor a pizza tradicional sem o queijo por cima, apenas por baixo. 
+    
+    Forma de Pagamento: Cartão (Visa CREDITO)
+    
+    Total: R$ _preco_da_conpra_
+     (Tempo estimado de entrega(delivery): entre 61~97 minutos.)`;
+    
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
     const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 

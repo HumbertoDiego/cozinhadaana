@@ -33,7 +33,7 @@ export const TradicionalsCollection: iProducts[] = [
   {
     id: 0,
     category: 'Tradicional',
-    urlImage: 'https://coca-colafemsa.com/wp-content/uploads/2020/02/2-30.png',
+    urlImage: 'src/assets/iscadecarne.png',
     title: 'Isca de carne',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 4,
@@ -42,8 +42,7 @@ export const TradicionalsCollection: iProducts[] = [
   {
     id: 1,
     category: 'Tradicional',
-    urlImage:
-      'https://coolicias.ao/wp-content/uploads/2020/02/Receita-de-Suco-de-Maracuj%C3%A1-Com-Laranja.jpg',
+    urlImage: 'src/assets/carnemoidav2.png',
     title: 'Carne moída',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 2.5,
@@ -52,7 +51,7 @@ export const TradicionalsCollection: iProducts[] = [
   {
     id: 2,
     category: 'Tradicional',
-    urlImage: 'https://miro.medium.com/max/1200/0*Uzt4O_O-wO_PutKH.jpg',
+    urlImage: 'src/assets/assadodepanela.png',
     title: 'Assado de panela',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 0,
@@ -61,8 +60,7 @@ export const TradicionalsCollection: iProducts[] = [
   {
     id: 3,
     category: 'Tradicional',
-    urlImage:
-      'https://images.tcdn.com.br/img/img_prod/705208/copo_cerveja_caldereta_350ml_37797293_1_20201123151545.jpg',
+    urlImage: 'src/assets/kaftaaomolhodetomate.png',
     title: 'Káfta  ao molho de tomate',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 3,
@@ -71,8 +69,7 @@ export const TradicionalsCollection: iProducts[] = [
   {
     id: 4,
     category: 'Tradicional',
-    urlImage:
-      'https://s2.glbimg.com/a3kQ_qIqjxZZj18gUo2_U05NiBY=/0x0:500x375/984x0/smart/filters:strip_icc()/s.glbimg.com/po/rc/media/2012/06/13/17/18/09/811/limonada_suica_10.jpg',
+    urlImage: 'src/assets/filedepirarucu.png',
     title: 'Filé de pirarucu',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 10,
@@ -81,7 +78,7 @@ export const TradicionalsCollection: iProducts[] = [
   {
     id: 5,
     category: 'Tradicional',
-    urlImage: 'https://saude.abril.com.br/wp-content/uploads/2017/07/iogurte-skyr.jpg',
+    urlImage: 'src/assets/filedearuana.png',
     title: 'Filé de aruanã',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 10,
@@ -90,7 +87,7 @@ export const TradicionalsCollection: iProducts[] = [
   {
     id: 6,
     category: 'Tradicional',
-    urlImage: 'https://saude.abril.com.br/wp-content/uploads/2017/07/iogurte-skyr.jpg',
+    urlImage: 'src/assets/coxadefrango.png',
     title: 'Coxa de frango assada',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 10,
@@ -99,7 +96,7 @@ export const TradicionalsCollection: iProducts[] = [
   {
     id: 7,
     category: 'Tradicional',
-    urlImage: 'rc/assets/saladadebacalhau.jpg',
+    urlImage: 'src/assets/frangogrelhado.png',
     title: 'Peito de frango grelhado',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 10,
@@ -108,7 +105,7 @@ export const TradicionalsCollection: iProducts[] = [
   {
     id: 8,
     category: 'Tradicional',
-    urlImage: 'https://saude.abril.com.br/wp-content/uploads/2017/07/iogurte-skyr.jpg',
+    urlImage: 'src/assets/frangodesfiado.png',
     title: 'Frango desfiado',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 10,
@@ -211,7 +208,7 @@ export const GourmetsCollection: iProducts[] = [
   {
     id: 110,
     category: 'Gourmet',
-    urlImage: 'src/assets/saladadebacalhau.jpg',
+    urlImage: 'src/assets/costelatambaquicomarrozdetacaca.png',
     title: 'Costela de tambaqui com arroz de tacacá',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 25,
@@ -220,7 +217,7 @@ export const GourmetsCollection: iProducts[] = [
   {
     id: 111,
     category: 'Gourmet',
-    urlImage: 'src/assets/frangocomcremedecebolaelaranja.png',
+    urlImage: 'src/assets/frangocomcremedecebola.png',
     title: 'Filé de peito de frango com creme de cebola e laranja',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 25,
@@ -243,7 +240,7 @@ export const SopasCollection: iProducts[] = [
     id: 200,
     category: 'Sopas',
     urlImage:
-      'src/assets/sopa.png',
+      'src/assets/sopav2.png',
     title: 'Sopa de legumes',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 5,
@@ -252,7 +249,7 @@ export const SopasCollection: iProducts[] = [
   {
     id: 201,
     category: 'Sopas',
-    urlImage: 'https://paradisepizzaria.com.br/site/img/produtos/281485_1_g.png',
+    urlImage: 'src/assets/sopav2.png',
     title: 'Sopa de abóbora',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 25,
@@ -261,7 +258,7 @@ export const SopasCollection: iProducts[] = [
   {
     id: 202,
     category: 'Sopas',
-    urlImage: 'https://nutrimassasesalgados.com/wp-content/uploads/2020/05/MG_6884-copiar.jpg',
+    urlImage: 'src/assets/sopav2.png',
     title: 'Sopa de lentilha',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 6,
@@ -271,7 +268,7 @@ export const SopasCollection: iProducts[] = [
     id: 203,
     category: 'Sopas',
     urlImage:
-      'https://imagensemoldes.com.br/wp-content/uploads/2020/05/Salgado-Coxinha-PNG-1280x720.png',
+      'src/assets/sopav2.png',
     title: 'Sopa de feijão',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 2.5,
@@ -280,7 +277,7 @@ export const SopasCollection: iProducts[] = [
   {
     id: 204,
     category: 'Sopas',
-    urlImage: 'https://img.estadao.com.br/resources/jpg/2/1/1487193579312.jpg',
+    urlImage: 'src/assets/sopav2.png',
     title: 'Sopa de abóbora com camarão',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 10,
