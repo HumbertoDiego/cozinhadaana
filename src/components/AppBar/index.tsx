@@ -25,7 +25,8 @@ import { CartModal, LoginModal } from '../../components/Modals'
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../../reducers/slices/user.slice';
 import { Offset } from './styles';
-//var axios = require('axios');
+import axios from 'axios';
+
 
 
 /* function sendMessage(data) {
