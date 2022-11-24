@@ -27,9 +27,7 @@ export interface iProducts {
   qt: number;
 }
 
-export interface iCarts {
-  products: iProducts[]
-}
+export const Cart: iProducts[] = []
 
 export const TradicionalsCollection: iProducts[] = [
   {
@@ -101,7 +99,7 @@ export const TradicionalsCollection: iProducts[] = [
   {
     id: 7,
     category: 'Tradicional',
-    urlImage: 'https://noiteemfoco.campinas.br/wp-content/uploads/2020/08/CARD%C3%81PIO-PRATOS-INDIVIDUAL-FIL%C3%89-DE-FRANGO.jpg',
+    urlImage: 'rc/assets/saladadebacalhau.jpg',
     title: 'Peito de frango grelhado',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 10,
@@ -123,16 +121,16 @@ export const GourmetsCollection: iProducts[] = [
     id: 100,
     category: 'Gourmet',
     urlImage:
-      'https://taipas.to.gov.br/wp-content/plugins/all-in-one-video-gallery/public/assets/images/placeholder-image.png',
+      'src/assets/filemignonaomolhomadeira.jpg',
     title: 'Filé mignon ao molho madeira',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
-    qt: 1
+    qt: 0
   },
   {
     id: 101,
     category: 'Gourmet',
     urlImage:
-      'https://taipas.to.gov.br/wp-content/plugins/all-in-one-video-gallery/public/assets/images/placeholder-image.png',
+      'src/assets/mignon_bacon_ervas.jpg',
     title: 'Medalhão de filé com bacon',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     qt: 0
@@ -141,7 +139,7 @@ export const GourmetsCollection: iProducts[] = [
     id: 102,
     category: 'Gourmet',
     urlImage:
-      'https://taipas.to.gov.br/wp-content/plugins/all-in-one-video-gallery/public/assets/images/placeholder-image.png',
+      'src/assets/bifearole.jpg',
     title: 'Bife a rolê',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     qt: 0
@@ -150,7 +148,7 @@ export const GourmetsCollection: iProducts[] = [
     id: 103,
     category: 'Gourmet',
     urlImage:
-      'https://taipas.to.gov.br/wp-content/plugins/all-in-one-video-gallery/public/assets/images/placeholder-image.png',
+      'src/assets/fileaparmegiana.jpg',
     title: 'Frango à parmegiana',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     qt: 0
@@ -159,7 +157,7 @@ export const GourmetsCollection: iProducts[] = [
     id: 104,
     category: 'Gourmet',
     urlImage:
-      'https://taipas.to.gov.br/wp-content/plugins/all-in-one-video-gallery/public/assets/images/placeholder-image.png',
+      'src/assets/saladadebacalhau.jpg',
     title: 'Salada de bacalhau',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     qt: 0
@@ -168,7 +166,7 @@ export const GourmetsCollection: iProducts[] = [
     id: 105,
     category: 'Gourmet',
     urlImage:
-      'https://taipas.to.gov.br/wp-content/plugins/all-in-one-video-gallery/public/assets/images/placeholder-image.png',
+      'src/assets/costelatambaquicomjambu.png',
     title: 'Costela de tambaqui com jambu',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     qt: 0
@@ -177,7 +175,7 @@ export const GourmetsCollection: iProducts[] = [
     id: 106,
     category: 'Gourmet',
     urlImage:
-      'https://thumb-cdn.soluall.net/prod/shp_products/sp1280fw/5eb99042-90e4-41e9-a472-2801ac1e08e8/5eb99042-c024-44c9-8414-2801ac1e08e8.jpg',
+      'src/assets/saladadefeijaocomcarneseca.jpg',
     title: 'Salada de feijão com carne seca',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 5,
@@ -186,7 +184,7 @@ export const GourmetsCollection: iProducts[] = [
   {
     id: 107,
     category: 'Gourmet',
-    urlImage: 'https://paradisepizzaria.com.br/site/img/produtos/281485_1_g.png',
+    urlImage: 'src/assets/lasanhadeberinjela.png',
     title: 'Lasanha de berinjela',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 25,
@@ -195,7 +193,7 @@ export const GourmetsCollection: iProducts[] = [
   {
     id: 108,
     category: 'Gourmet',
-    urlImage: 'https://paradisepizzaria.com.br/site/img/produtos/281485_1_g.png',
+    urlImage: 'src/assets/lasanhabolonhesa.jpg',
     title: 'Lasanha a bolonhesa',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 25,
@@ -204,7 +202,7 @@ export const GourmetsCollection: iProducts[] = [
   {
     id: 109,
     category: 'Gourmet',
-    urlImage: 'https://paradisepizzaria.com.br/site/img/produtos/281485_1_g.png',
+    urlImage: 'src/assets/yakisoba.jpeg',
     title: 'Yakisoba',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 25,
@@ -213,7 +211,7 @@ export const GourmetsCollection: iProducts[] = [
   {
     id: 110,
     category: 'Gourmet',
-    urlImage: 'https://paradisepizzaria.com.br/site/img/produtos/281485_1_g.png',
+    urlImage: 'src/assets/saladadebacalhau.jpg',
     title: 'Costela de tambaqui com arroz de tacacá',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 25,
@@ -222,7 +220,7 @@ export const GourmetsCollection: iProducts[] = [
   {
     id: 111,
     category: 'Gourmet',
-    urlImage: 'https://noiteemfoco.campinas.br/wp-content/uploads/2020/08/CARD%C3%81PIO-PRATOS-INDIVIDUAL-FIL%C3%89-DE-FRANGO.jpg',
+    urlImage: 'src/assets/frangocomcremedecebolaelaranja.png',
     title: 'Filé de peito de frango com creme de cebola e laranja',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 25,
@@ -231,7 +229,7 @@ export const GourmetsCollection: iProducts[] = [
   {
     id: 112,
     category: 'Gourmet',
-    urlImage: 'https://noiteemfoco.campinas.br/wp-content/uploads/2020/08/CARD%C3%81PIO-PRATOS-INDIVIDUAL-FIL%C3%89-DE-FRANGO.jpg',
+    urlImage: 'src/assets/frangocommolhobarbecue.jpg',
     title: 'Filé de peito de frango com bacon ao molho barbecue',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 25,
@@ -245,7 +243,7 @@ export const SopasCollection: iProducts[] = [
     id: 200,
     category: 'Sopas',
     urlImage:
-      'https://thumb-cdn.soluall.net/prod/shp_products/sp1280fw/5eb99042-90e4-41e9-a472-2801ac1e08e8/5eb99042-c024-44c9-8414-2801ac1e08e8.jpg',
+      'src/assets/sopa.png',
     title: 'Sopa de legumes',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 5,

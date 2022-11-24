@@ -12,6 +12,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import Badge from '@mui/material/Badge';
 
 import { NavLink } from 'react-router-dom';
 
@@ -32,8 +33,16 @@ interface Props {
 const textColor = theme.palette.text.primary
 
 export default function ({ children }: Props) {
-    const dispatch = useDispatch()
-    const { isLogged, avatar, name } = useSelector((state: any) => state.user)
+    const dispatch = useDispatch();
+    const { isLogged, avatar, name } = useSelector((state: any) => state.user);
+
+
+    const allProducts = useSelector((state: any) => state.products);
+    const listProducts = allProducts.gourmet.concat(allProducts.sopas.concat(allProducts.tradicional));
+    const cartProducts = listProducts.filter(function (el) {return el.qt>0});
+    const cartEmpty = !cartProducts.length>0; 
+    console.log({cart: cartProducts});
+
 
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
     const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
@@ -106,7 +115,7 @@ export default function ({ children }: Props) {
                                 }}
                             >
                                 {APP_PAGES.map((page) => (
-                                    <NavLink key={page.path} to={page.path} end>
+                                    <NavLink key={page.id} to={page.path} end>
                                         {({ isActive }) => (
                                             <MenuItem onClick={handleCloseNavMenu}>
                                                 <Typography
@@ -149,6 +158,7 @@ export default function ({ children }: Props) {
                         <Box sx={{ mr: 2, flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'flex-end' } }}>
                             {APP_PAGES.map((page) => (
                                 <NavLink
+                                    key={page.id}
                                     end
                                     to={page.path}
                                 >
@@ -179,12 +189,14 @@ export default function ({ children }: Props) {
                         </Box>
 
                         <Box sx={{ flexGrow: 0 }}>
-                            <GradientButton
-                                onClick={toggleCartModal}
-                                sx={{ marginRight: 2, display: { xs: !isLogged ? 'flex' : 'none' } }}
-                            >
-                                <AddShoppingCartIcon />
-                            </GradientButton>
+                            <Badge color="primary" badgeContent=" " invisible={cartEmpty}>
+                                <GradientButton
+                                    onClick={toggleCartModal}
+                                    sx={{ marginRight: 1 }}
+                                >
+                                    <AddShoppingCartIcon />
+                                </GradientButton>
+                            </Badge>
 
                             {
                                 isLogged && (

@@ -26,7 +26,8 @@ function ProductCard({ id, title, description, urlImage, category, qt }: iProduc
         if (count>0){
             setCount(count-1);
         }
-        //dispatch(deleteItem({ id, title, description, urlImage, category }))
+        qt = count;
+        dispatch(deleteItem({ id, title, description, urlImage, category, qt }))
     }
 
     const handleAddItem = () =>{
