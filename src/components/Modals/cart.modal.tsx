@@ -15,12 +15,28 @@ import { useDispatch, useSelector } from 'react-redux';
 import { registerUser } from '../../reducers/slices/user.slice';
 import { iUser } from '../../db'
 
+import axios from 'axios';
+
+/* function sendMessage(data) {
+    var config = {
+      method: 'post',
+      url: `https://graph.facebook.com/${process.env.VERSION}/${process.env.PHONE_NUMBER_ID}/messages`,
+      headers: {
+        'Authorization': `Bearer ${process.env.ACCESS_TOKEN}`,
+        'Content-Type': 'application/json'
+      },
+      data: data
+    };
+  
+    return axios(config)
+  } */  
+
 interface ModalProps {
     open: boolean;
     toggle: VoidFunction;
 }
 
-const userDataInitialState: iUser = {
+const cartInitialState: iUser = {
     name: 'Menew Admin',
     email: 'menew@admin.com',
     cpf: '987.654.321-00',
@@ -37,13 +53,38 @@ export default function ({ open, toggle }: ModalProps) {
     const handleCloseToast = () => setOpenToast(false)
     const handleOpenToast = () => setOpenToast(true)
 
-    const [userData, setUserData] = useState(userDataInitialState)
+    const [carData, setCartData] = useState(cartInitialState)
 
-    const handleSignUp = () => dispatch(registerUser(userData))
+    //const handleSignUp = () => dispatch(registerUser(carData))
+
+    var waurl = "https://wa.me/5592981000957?text=";
+    var txttempalte = `Pedido nº 4294
+
+    Modo de entrega: Delivery
+    Endereço: _endereco_de_entrega
+    Preço de entrega: R$ 6,00
+    
+    Itens:
+    
+    ➡ 1x Coca Cola 2l
+    ➡ 1x Pizza Grande (Serve 8 Fatias)
+            Escolha a Quantidade de Sabores
+                1x 2 Sabores
+            2 Sabores -> Sabores
+                1x Calabresa
+                1x Portuguesa
+    
+    OBS: Quero por favor a pizza tradicional sem o queijo por cima, apenas por baixo. 
+    
+    Forma de Pagamento: Cartão (Visa CREDITO)
+    
+    Total: R$ _preco_da_conpra_
+        (Tempo estimado de entrega(delivery): entre 61~97 minutos.)`;
+
 
     const handleUserData = ({ target }: any) => {
         const { name, value } = target
-        setUserData((prev) => ({ ...prev, [name]: value }))
+        setCartData((prev) => ({ ...prev, [name]: value }))
     }
 
     useEffect(() => {
@@ -106,7 +147,12 @@ export default function ({ open, toggle }: ModalProps) {
                 </Box>
                 <DialogActions sx={{ mx: 2.5 }}>
                     <Button color="secondary" onClick={toggle}>Cancelar</Button>
-                    <GradientButton onClick={handleSignUp} autoFocus>
+                    <GradientButton 
+                    onClick={() => {
+                        var murl = waurl+txttempalte;
+                        window.open(murl,'_blank').focus()
+                      }}
+                    autoFocus>
                         Enviar
                     </GradientButton>
                 </DialogActions>
