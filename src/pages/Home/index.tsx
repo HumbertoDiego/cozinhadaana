@@ -56,17 +56,17 @@ export function ListItemsPage({ category }: PageProps) {
                 {
                     !isLoading ? (
                         data.map((item: iProducts) => (
-                            <Grid item key={item.id}>
-                                <ProductCard
-                                    id={item.id}
-                                    title={item.title}
-                                    urlImage={item.urlImage}
-                                    category={item.category}
-                                    description={item.description}
-                                    price={item.price}
-                                    qt={item.qt}
-                                />
-                            </Grid>
+                                <Grid item key={item.id} sx={{display: (item.active) ? 'block' : 'none'}}>
+                                    <ProductCard
+                                        id={item.id}
+                                        title={item.title}
+                                        urlImage={item.urlImage}
+                                        category={item.category}
+                                        description={item.description}
+                                        price={item.price}
+                                        qt={item.qt}
+                                    />
+                                </Grid>
                         ))
                     ) : (
                         <Grid

@@ -25,6 +25,7 @@ export interface iProducts {
   description: string;
   price: number;
   qt: number;
+  active: boolean
 }
 
 export const Cart: iProducts[] = []
@@ -37,7 +38,8 @@ export const TradicionalsCollection: iProducts[] = [
     title: 'Isca de carne',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 17.50,
-    qt: 0
+    qt: 0, 
+    active: true
   },
   {
     id: 1,
@@ -46,7 +48,8 @@ export const TradicionalsCollection: iProducts[] = [
     title: 'Carne moída',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 20.5,
-    qt: 0
+    qt: 0, 
+    active: true
   },
   {
     id: 2,
@@ -55,7 +58,8 @@ export const TradicionalsCollection: iProducts[] = [
     title: 'Assado de panela',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 20,
-    qt: 0
+    qt: 0, 
+    active: true
   },
   {
     id: 3,
@@ -64,7 +68,8 @@ export const TradicionalsCollection: iProducts[] = [
     title: 'Káfta  ao molho de tomate',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 18,
-    qt: 0
+    qt: 0, 
+    active: true
   },
   {
     id: 4,
@@ -73,7 +78,8 @@ export const TradicionalsCollection: iProducts[] = [
     title: 'Filé de pirarucu',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 20,
-    qt: 0
+    qt: 0, 
+    active: true
   },
   {
     id: 5,
@@ -82,7 +88,8 @@ export const TradicionalsCollection: iProducts[] = [
     title: 'Filé de aruanã',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 10,
-    qt: 0
+    qt: 0, 
+    active: true
   },
   {
     id: 6,
@@ -91,7 +98,8 @@ export const TradicionalsCollection: iProducts[] = [
     title: 'Coxa de frango assada',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 10,
-    qt: 0
+    qt: 0, 
+    active: true
   },
   {
     id: 7,
@@ -100,7 +108,8 @@ export const TradicionalsCollection: iProducts[] = [
     title: 'Peito de frango grelhado',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 10,
-    qt: 0
+    qt: 0, 
+    active: true
   },
   {
     id: 8,
@@ -109,7 +118,8 @@ export const TradicionalsCollection: iProducts[] = [
     title: 'Frango desfiado',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 10,
-    qt: 0
+    qt: 0, 
+    active: true
   },
 ];
 
@@ -122,7 +132,8 @@ export const GourmetsCollection: iProducts[] = [
     title: 'Filé mignon ao molho madeira',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 15.50,
-    qt: 0
+    qt: 0, 
+    active: true
   },
   {
     id: 101,
@@ -132,7 +143,8 @@ export const GourmetsCollection: iProducts[] = [
     title: 'Medalhão de filé com bacon',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 15.50,
-    qt: 0
+    qt: 0, 
+    active: true
   },
   {
     id: 102,
@@ -142,7 +154,8 @@ export const GourmetsCollection: iProducts[] = [
     title: 'Bife a rolê',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 15.50,
-    qt: 0
+    qt: 0, 
+    active: true
   },
   {
     id: 103,
@@ -152,7 +165,8 @@ export const GourmetsCollection: iProducts[] = [
     title: 'Frango à parmegiana',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 15.50,
-    qt: 0
+    qt: 0, 
+    active: true
   },
   {
     id: 104,
@@ -162,7 +176,8 @@ export const GourmetsCollection: iProducts[] = [
     title: 'Salada de bacalhau',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 15.50,
-    qt: 0
+    qt: 0, 
+    active: true
   },
   {
     id: 105,
@@ -171,7 +186,8 @@ export const GourmetsCollection: iProducts[] = [
     title: 'Costela de tambaqui com jambu',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 15.50,
-    qt: 0
+    qt: 0, 
+    active: true
   },
   {
     id: 106,
@@ -181,7 +197,8 @@ export const GourmetsCollection: iProducts[] = [
     title: 'Salada de feijão com carne seca',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 15,
-    qt: 0
+    qt: 0, 
+    active: true
   },
   {
     id: 107,
@@ -190,7 +207,8 @@ export const GourmetsCollection: iProducts[] = [
     title: 'Lasanha de berinjela',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 25.50,
-    qt: 0
+    qt: 0, 
+    active: true
   },
   {
     id: 108,
@@ -199,7 +217,8 @@ export const GourmetsCollection: iProducts[] = [
     title: 'Lasanha a bolonhesa',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 25,
-    qt: 0
+    qt: 0, 
+    active: true
   },
   {
     id: 109,
@@ -208,7 +227,8 @@ export const GourmetsCollection: iProducts[] = [
     title: 'Yakisoba',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 25,
-    qt: 0
+    qt: 0, 
+    active: true
   },
   {
     id: 110,
@@ -217,7 +237,8 @@ export const GourmetsCollection: iProducts[] = [
     title: 'Costela de tambaqui com arroz de tacacá',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 25,
-    qt: 0
+    qt: 0, 
+    active: true
   },
   {
     id: 111,
@@ -226,7 +247,8 @@ export const GourmetsCollection: iProducts[] = [
     title: 'Filé de peito de frango com creme de cebola e laranja',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 15,
-    qt: 0
+    qt: 0, 
+    active: true
   },
   {
     id: 112,
@@ -235,7 +257,8 @@ export const GourmetsCollection: iProducts[] = [
     title: 'Filé de peito de frango com bacon ao molho barbecue',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 15,
-    qt: 0
+    qt: 0, 
+    active: true
   },
   
 ];
@@ -249,7 +272,8 @@ export const SopasCollection: iProducts[] = [
     title: 'Sopa de legumes',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 10.70,
-    qt: 0
+    qt: 0, 
+    active: true
   },
   {
     id: 201,
@@ -258,7 +282,8 @@ export const SopasCollection: iProducts[] = [
     title: 'Sopa de abóbora',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 10,
-    qt: 0
+    qt: 0, 
+    active: true
   },
   {
     id: 202,
@@ -267,7 +292,8 @@ export const SopasCollection: iProducts[] = [
     title: 'Sopa de lentilha',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 10,
-    qt: 0
+    qt: 0, 
+    active: true
   },
   {
     id: 203,
@@ -277,7 +303,8 @@ export const SopasCollection: iProducts[] = [
     title: 'Sopa de feijão',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 10,
-    qt: 0
+    qt: 0, 
+    active: true
   },
   {
     id: 204,
@@ -286,6 +313,7 @@ export const SopasCollection: iProducts[] = [
     title: 'Sopa de abóbora com camarão',
     description: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum',
     price: 10,
-    qt: 0
+    qt: 0, 
+    active: true
   },
 ];
