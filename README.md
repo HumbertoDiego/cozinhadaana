@@ -68,7 +68,7 @@ $ git clone https://github.com/HumbertoDiego/cozinhadaana
 cd cozinhadaana
 npm install -g yarn
 yarn
-yarn dev
+yarn dev --host 0.0.0.0 --port 80
 ```
 
 Por fim, abra seu navegador na URL `http://localhost:3000`

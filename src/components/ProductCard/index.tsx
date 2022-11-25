@@ -13,7 +13,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { memo, useState } from 'react';
 import { addItem, deleteItem } from '../../reducers/slices/product.slice';
 
-function ProductCard({ id, title, description, urlImage, category, qt }: iProducts) {
+function ProductCard({ id, title, description, urlImage, category, price, qt }: iProducts) {
     const { isLogged } = useSelector((state: any) => state.user)
     const dispatch = useDispatch()
 
@@ -27,13 +27,13 @@ function ProductCard({ id, title, description, urlImage, category, qt }: iProduc
             setCount(count-1);
         }
         qt = count;
-        dispatch(deleteItem({ id, title, description, urlImage, category, qt }))
+        dispatch(deleteItem({ id, title, description, urlImage, category, price, qt }))
     }
 
     const handleAddItem = () =>{
         setCount(count+1);
         qt = count;
-        dispatch(addItem({ id, title, description, urlImage, category, qt }));
+        dispatch(addItem({ id, title, description, urlImage, category, price, qt }));
     }
 
     return (

@@ -25,12 +25,22 @@ import { CartModal, LoginModal } from '../../components/Modals'
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../../reducers/slices/user.slice';
 import { Offset } from './styles';
+import { iProducts } from '../../db';
 
 interface Props {
     children: ReactElement
 }
 
 const textColor = theme.palette.text.primary
+
+
+const getWindowDimensions = () => {
+    const { innerWidth: width, innerHeight: height } = window;
+    return {
+      width,
+      height
+    };
+  }
 
 export default function ({ children }: Props) {
     const dispatch = useDispatch();
@@ -39,8 +49,11 @@ export default function ({ children }: Props) {
 
     const allProducts = useSelector((state: any) => state.products);
     const listProducts = allProducts.gourmet.concat(allProducts.sopas.concat(allProducts.tradicional));
-    const cartProducts = listProducts.filter(function (el) {return el.qt>0});
-    const cartEmpty = !cartProducts.length>0; 
+    const cartProducts = listProducts.filter(function (el:iProducts) {return el.qt>0});
+    var cartLength = cartProducts.length;
+    const cartEmpty = !(cartLength>0);
+    var productCount = 0;
+    cartProducts.map((el:iProducts)=> {productCount+=el.qt});
     console.log({cart: cartProducts});
     
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -79,7 +92,7 @@ export default function ({ children }: Props) {
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
                         {/* Exibe a logo a esquerda em tela média */}
-                        <Box sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}>
+                        <Box sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, }}>
                             <img src={Logo} />
                         </Box>
 
@@ -150,7 +163,7 @@ export default function ({ children }: Props) {
 
                         {/* Exibe a logo centralizada em tela menor que a média */}
                         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-                            <img src={Logo} />
+                            <img width='100px' src={Logo} />
                         </Box>
 
                         {/* Exibe os links das páginas em tela média */}
@@ -188,7 +201,7 @@ export default function ({ children }: Props) {
                         </Box>
 
                         <Box sx={{ flexGrow: 0 }}>
-                            <Badge color="primary" badgeContent=" " invisible={cartEmpty}>
+                            <Badge color="primary" badgeContent={productCount} invisible={cartEmpty}>
                                 <GradientButton
                                     onClick={toggleCartModal}
                                     sx={{ marginRight: 1 }}
