@@ -107,9 +107,8 @@ export default function ({ open, toggle }: ModalProps) {
     };
 
     const handleClick = () => {       
-        const address = addressRef.current.lastElementChild.firstElementChild.value;
-        if (!(clientNameRef.current.lastElementChild.firstElementChild)){return 0}
-        const clientName = clientNameRef.current.lastElementChild.firstElementChild.value;
+        const address = new String(addressRef.current!['lastElementChild']['firstElementChild']['value']);
+        const clientName = new String(clientNameRef.current!['lastElementChild']['firstElementChild']['value']);
 
         if (!(clientName.length>0)){
             setclientNameError( { error: true, helperText: "Por favor preencha um nome" });
@@ -146,7 +145,7 @@ Forma de Pagamento: ${payMode}%0a
 %0a
 ( Entregas todas as quintas e sextas.)`;
             var murl = waurl+txttempalte;
-            window.open(murl,'_blank').focus();
+            window.open(murl,'_blank')!.focus();
         }
       }
 
@@ -183,7 +182,16 @@ Forma de Pagamento: ${payMode}%0a
                     autoComplete="off"
                     sx={{ '& > :not(style)': { my: 1 }, width: '90%', margin: '0 auto' }}
                 >
-                    <ClientNameField />
+                    <TextField
+                        ref={clientNameRef}
+                        name="clientName"
+                        label="Seu nome"
+                        variant="filled"
+                        onChange={handlenameChange}
+                        {...clientNameError}
+                        required
+                        fullWidth
+                    />
                     <AddressField />
                     <PayModeControl />
                 </Box>
@@ -191,7 +199,7 @@ Forma de Pagamento: ${payMode}%0a
                     <Button color="secondary" onClick={toggle}>Cancelar</Button>
                     <Button onClick={handleClick} 
                         >
-                        <img width="100%" alt="Chat on WhatsApp" src="src/assets/WhatsAppButtonGreenSmall.png" /> 
+                        <img width="100%" alt="Chat on WhatsApp" src={new URL('../../assets/WhatsAppButtonGreenSmall.png', import.meta.url).href} /> 
                     </Button>
                 </DialogActions>
             </Dialog>

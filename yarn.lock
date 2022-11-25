@@ -695,11 +695,6 @@
   dependencies:
     "is-arrayish" "^0.2.1"
 
-"esbuild-windows-64@0.14.28":
-  "integrity" "sha512-78PhySDnmRZlsPNp/W/5Fim8iivlBQQxfhBFIqR7xwvfDmCFUSByyMKP7LCHgNtb04yNdop8nJJkJaQ8Xnwgiw=="
-  "resolved" "https://registry.npmjs.org/esbuild-windows-64/-/esbuild-windows-64-0.14.28.tgz"
-  "version" "0.14.28"
-
 "esbuild@^0.14.14":
   "integrity" "sha512-YLNprkCcMVKQ5sekmCKEQ3Obu/L7s6+iij38xNKyBeSmSsTWur4Ky/9zB3XIGT8SCJITG/bZwAR2l7YOAXch4Q=="
   "resolved" "https://registry.npmjs.org/esbuild/-/esbuild-0.14.28.tgz"
