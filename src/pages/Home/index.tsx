@@ -65,6 +65,7 @@ export function ListItemsPage({ category }: PageProps) {
                                         description={item.description}
                                         price={item.price}
                                         qt={item.qt}
+                                        active={item.active}
                                     />
                                 </Grid>
                         ))

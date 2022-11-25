@@ -46,11 +46,58 @@ export default function ({ open, toggle }: ModalProps) {
         currency: 'BRL',
     });        
 
+    function AddressField (){
+        return ( 
+        <TextField
+            ref={addressRef}
+            name="address"
+            label="Seu Endereço (deixe em branco caso queira retirar no nosso estabelecimento)"
+            variant="filled"
+            fullWidth
+        />
+        );
+    }
+
+    function ClientNameField (){
+        return ( 
+        <TextField
+            ref={clientNameRef}
+            name="clientName"
+            label="Seu nome"
+            variant="filled"
+            onChange={handlenameChange}
+            {...clientNameError}
+            required
+            fullWidth
+        />
+        );
+    }
+
+    function PayModeControl (){
+        return (
+            <FormControl variant="filled" fullWidth>
+                <InputLabel id="demo-simple-select-label">Forma de pagamento</InputLabel>
+                <Select
+                ref={payModeRef}
+                labelId="demo-simple-select-label"
+                id="payMode"
+                label="Forma de pagamento"
+                value={payMode}
+                onChange={handleChange}
+                >
+                    <MenuItem value='Pix'>Pix</MenuItem>
+                    <MenuItem value='Dinheiro'>Dinheiro</MenuItem>
+                    <MenuItem value='Cartão de crédito'>Cartão de crédito</MenuItem>
+                    <MenuItem value='Cartão de débito'>Cartão de débito</MenuItem>
+                </Select>
+            </FormControl>
+        )
+    }
+
 
     const handleChange = (event: SelectChangeEvent) => {
         setPayMode(event.target.value);
     };
-
     const handlenameChange = (event: any) => {
         if (!(event.target.value.length>0)){
             setclientNameError( { error: true, helperText: "Por favor preencha um nome" });
@@ -136,39 +183,9 @@ Forma de Pagamento: ${payMode}%0a
                     autoComplete="off"
                     sx={{ '& > :not(style)': { my: 1 }, width: '90%', margin: '0 auto' }}
                 >
-                    <TextField
-                        ref={clientNameRef}
-                        name="clientName"
-                        label="Seu nome"
-                        variant="filled"
-                        onChange={handlenameChange}
-                        {...clientNameError}
-                        required
-                        fullWidth
-                    />
-                    <TextField
-                        ref={addressRef}
-                        name="address"
-                        label="Seu Endereço (deixe em branco caso queira retirar no nosso estabelecimento)"
-                        variant="filled"
-                        fullWidth
-                    />
-                    <FormControl variant="filled" fullWidth>
-                        <InputLabel id="demo-simple-select-label">Forma de pagamento</InputLabel>
-                        <Select
-                        ref={payModeRef}
-                        labelId="demo-simple-select-label"
-                        id="payMode"
-                        label="Forma de pagamento"
-                        value={payMode}
-                        onChange={handleChange}
-                        >
-                            <MenuItem value='Pix'>Pix</MenuItem>
-                            <MenuItem value='Dinheiro'>Dinheiro</MenuItem>
-                            <MenuItem value='Cartão de crédito'>Cartão de crédito</MenuItem>
-                            <MenuItem value='Cartão de débito'>Cartão de débito</MenuItem>
-                        </Select>
-                    </FormControl>
+                    <ClientNameField />
+                    <AddressField />
+                    <PayModeControl />
                 </Box>
                 <DialogActions sx={{ mx: 2.5 }}>
                     <Button color="secondary" onClick={toggle}>Cancelar</Button>
