@@ -13,9 +13,9 @@ interface PageProps {
 }
 
 export function ListItemsPage({ category }: PageProps) {
-    const { tradicional, gourmet, sopas } = useSelector((state: iReducerStore) => state.products)
-    const [data, setData] = useState<iProducts[]>([])
-    const [isLoading, setIsLoading] = useState(true)
+    const { tradicional, gourmet, sopas } = useSelector((state: iReducerStore) => state.products);
+    const [data, setData] = useState<iProducts[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         if (!tradicional || !sopas || !gourmet) return
@@ -42,7 +42,7 @@ export function ListItemsPage({ category }: PageProps) {
         }, 500) */
         setData(categoryProducts);
         setIsLoading(false);
-    }, [category, tradicional, gourmet, sopas])
+    }, [category, tradicional, gourmet, sopas]);
 
     return (
         <Grid container justifyContent="center">
@@ -81,6 +81,7 @@ export function ListItemsPage({ category }: PageProps) {
                         </Grid>
                     )
                 }
+            
             </Grid>
         </Grid>
     )

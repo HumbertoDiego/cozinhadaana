@@ -1,4 +1,4 @@
-import { useState, MouseEvent, ReactElement } from 'react';
+import { useState, useEffect, MouseEvent, ReactElement } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -14,6 +14,9 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Badge from '@mui/material/Badge';
 
+import Fab from '@mui/material/Fab';
+import AddIcon from '@mui/icons-material/Add';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import { NavLink } from 'react-router-dom';
 
 import Logo from '../../assets/logo.svg'
@@ -45,7 +48,14 @@ const getWindowDimensions = () => {
 export default function ({ children }: Props) {
     const dispatch = useDispatch();
     const { isLogged, avatar, name } = useSelector((state: any) => state.user);
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const [cartFABVisibility, setcartFABVisibility] = useState(false);
+    const matches1400px = useMediaQuery('(min-width:1400px)');
 
+    const handleScroll = () => {
+        const position = window.pageYOffset;
+        setScrollPosition(position);
+    };
 
     const allProducts = useSelector((state: any) => state.products);
     const listProducts = allProducts.gourmet.concat(allProducts.sopas.concat(allProducts.tradicional));
@@ -82,6 +92,13 @@ export default function ({ children }: Props) {
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
     };
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
 
     return (
         <>
@@ -249,6 +266,21 @@ export default function ({ children }: Props) {
                 </Container>
             </AppBar >
             <Offset>{children}</Offset>
+            
+            <Box sx={{ 
+                '& > :not(style)': { m: 1 },
+                position: 'fixed',
+                bottom: '5%',
+                zIndex:'1',
+                right: (matches1400px) ? '100px' : '10px',
+                display: { xs: (scrollPosition) >60 ? 'flex': 'none', md: (scrollPosition) >213 ? 'flex': 'none' }
+                }}>
+                <Badge color="secondary" overlap="circular" badgeContent={productCount} invisible={cartEmpty}>
+                    <Fab color="primary" aria-label="add" onClick={toggleCartModal} sx={{zIndex:'1'}}>
+                        <AddShoppingCartIcon />
+                    </Fab>
+                </Badge>
+            </Box>
         </>
     );
 };
