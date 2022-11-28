@@ -17,7 +17,7 @@ export function ListItemsPage({ category }: PageProps) {
     const [data, setData] = useState<iProducts[]>([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(() => {
+    useEffect(() => { 
         if (!tradicional || !sopas || !gourmet) return
 
         setIsLoading(true)
