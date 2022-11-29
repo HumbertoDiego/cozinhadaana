@@ -78,4 +78,17 @@ yarn preview --host 0.0.0.0 --port 80
 ```
 
 Por fim, abra seu navegador na URL `http://localhost`
+
+```bash
+# Clone este repositório
+$ cd dist
+
+git init
+git add -A
+git commit -m "build"
+git checkout -b gh-pages
+
+git remote add origin https://github.com/cozinhadaana/cozinhadaana
+git push -u origin gh-pages
+```
 <br>
